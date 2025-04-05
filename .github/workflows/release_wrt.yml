@@ -96,6 +96,12 @@ jobs:
             done
           fi
 
+      - name: Check Disk Space
+        run: df -h
+
+      - name: Check Directory Permissions
+        run: ls -l ./action_build
+
       - name: Build Firmware
         run: ./build.sh ${{ inputs.model }}
 
